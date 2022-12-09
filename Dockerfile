@@ -13,6 +13,8 @@ RUN sed -i 's/denied/granted/' /etc/httpd/conf/httpd.conf
 
 RUN yum -y install nano
 
+COPY . /var/www/html/
+
 CMD ["/usr/sbin/init"]
 
 EXPOSE 80
