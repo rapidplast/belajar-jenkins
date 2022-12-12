@@ -13,8 +13,9 @@ pipeline {
         }
         stage ('Test') {
             steps {
+                def scannerHome = tool 'SonarScanner 4.7';
                 withSonarQubeEnv(installationName: 'sonarqube') {
-                    sh 'clean sonar:sonar'
+                    sh "${scannerHome}/bin/sonar-scanner"
                 }
             }
         }
