@@ -2,14 +2,14 @@ pipeline {
     agent any
     stages {
         stage ('Checkout') {
-            checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'd16b712d-e5f4-41b9-ad6d-1517229e2b1c', url: 'https://github.com/rapidplast/belajar-jenkins.git']]]) 
+            steps {
+                git branch: 'main', credentialsId: 'd16b712d-e5f4-41b9-ad6d-1517229e2b1c', url: 'https://github.com/rapidplast/belajar-jenkins.git'
+            } 
         }
         stage ('Build') {
-              // Shell build step
-            sh """ 
-                cd /var/lib/docker/volumes/belajar-jenkins/_data/
-                git pull 
-                """ 
+            steps {
+                sh 'cd /var/lib/docker/volumes/belajar-jenkins/_data/ && git pull'  
+            }
         }
         stage ('Test') {
             steps {
