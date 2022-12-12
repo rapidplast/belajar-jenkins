@@ -14,7 +14,7 @@ pipeline {
         stage ('Test') {
             steps {
                 withSonarQubeEnv('sonarqube') {
-                    sh "sonar-scanner sonar-scanner -Dsonar.projectKey=belajar-jenkins -Dsonar.sources=. -Dsonar.host.url=http://192.168.0.85:9001 -Dsonar.login=squ_e102487f7b721199ffa8029d071e1c16d613725c"
+                    sh "sonar-scanner -Dsonar.projectKey=belajar-jenkins -Dsonar.sources=. -Dsonar.host.url=http://192.168.0.85:9001 -Dsonar.login=squ_e102487f7b721199ffa8029d071e1c16d613725c"
                 }
             }
         }
