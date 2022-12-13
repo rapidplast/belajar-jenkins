@@ -21,10 +21,10 @@ pipeline {
     }
     post {
         failure {
-            mail body: "Dear All, Please check the ${BUILD_URL} ASAP!!" , cc: '', from: 'NoReplyJenkins', subject: "Job ${JOB_NAME} (${BUILD_NUMBER}) is FAILURE :(", to: 'hafid.rosianto@rapidplast.co.id'
+            mail body: "Dear All, Please check the ${BUILD_URL} ASAP!!" , cc: '1941720092@student.polinema.ac.id', from: 'NoReplyJenkins', subject: "Job ${JOB_NAME} (${BUILD_NUMBER}) is FAILURE :(", to: 'hafid.rosianto@rapidplast.co.id'
         }
         success {
-            mail body: "Dear All, The build is success on ${BUILD_URL}" , cc: '', from: 'NoReplyJenkins', subject: "Job ${JOB_NAME} (${BUILD_NUMBER}) is SUCCESS :D", to: 'hafid.rosianto@rapidplast.co.id'
+            mail body: "Dear All, The build is success on ${BUILD_URL}" , cc: '1941720092@student.polinema.ac.id', from: 'NoReplyJenkins', subject: "Job ${JOB_NAME} (${BUILD_NUMBER}) is SUCCESS :D", to: 'hafid.rosianto@rapidplast.co.id'
         }
     }
 }
