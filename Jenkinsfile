@@ -18,13 +18,13 @@ pipeline {
                 }
             }
         }
-        post {
-            failure {
-                mail body: '''Dear All, Please check the ${BUILD_URL} ASAP!!''', cc: '', from: 'NoReplyJenkins', subject: 'Job \'${JOB_NAME}\' (${BUILD_NUMBER}) is FAILURE :( ', to: 'hafid.rosianto@rapidplast.co.id'
-            }
-            success {
-                mail body: '''Dear All, The build is success on ${BUILD_URL} ''', cc: '', from: 'NoReplyJenkins', subject: 'Job \'${JOB_NAME}\' (${BUILD_NUMBER}) is SUCCESS :D ', to: 'hafid.rosianto@rapidplast.co.id'
-            }
+    }
+    post {
+        failure {
+            mail body: '''Dear All, Please check the ${BUILD_URL} ASAP!!''', cc: '', from: 'NoReplyJenkins', subject: 'Job \'${JOB_NAME}\' (${BUILD_NUMBER}) is FAILURE :( ', to: 'hafid.rosianto@rapidplast.co.id'
+        }
+        success {
+            mail body: '''Dear All, The build is success on ${BUILD_URL} ''', cc: '', from: 'NoReplyJenkins', subject: 'Job \'${JOB_NAME}\' (${BUILD_NUMBER}) is SUCCESS :D ', to: 'hafid.rosianto@rapidplast.co.id'
         }
     }
 }
