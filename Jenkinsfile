@@ -14,7 +14,7 @@ pipeline {
         stage ('Test') {
             steps {
                 withSonarQubeEnv('sonarqube') {
-                    sh "sonar-scanner -Dsonar.projectKey=belajar-jenkins -Dsonar.sources=. -Dsonar.host.url=http://192.168.0.85:9001 -Dsonar.login=squ_e102487f7b721199ffa8029d071e1c16d613725c"
+                    sh "1sonar-scanner -Dsonar.projectKey=belajar-jenkins -Dsonar.sources=. -Dsonar.host.url=http://192.168.0.85:9001 -Dsonar.login=squ_e102487f7b721199ffa8029d071e1c16d613725c"
                 }
             }
         }
@@ -28,16 +28,3 @@ pipeline {
         }
     }
 }
-
-
-// stage ('Belajar Jenkins - Post build actions') {
-// /*
-// Please note this is a direct conversion of post-build actions. 
-// It may not necessarily work/behave in the same way as post-build actions work.
-// A logic review is suggested.
-// */
-// 		// Mailer notification
-// 		step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'hafid.rosianto@rapidplast.co.id', sendToIndividuals: true])
- 
-// }
-// installationName: 
