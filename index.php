@@ -1,3 +1,3 @@
 <?php
-echo "Love you ayaanngg :*"
+echo "Mantaaff"
 ?>
